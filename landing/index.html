@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Qalam &ndash; a sublime home for your thoughts.</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1" />
+    <meta
+      name="description"
+      content="Record, organize and relive your thoughts in a simple, beautiful journal that's made just for you."
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400&family=Lato:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @keyframes slideInFromBottomPrelude {
+        0% {
+          transform: translateY(20pt);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(20pt);
+          opacity: 0;
+        }
+      }
+
+      @keyframes slideInFromBottom {
+        0% {
+          transform: translateY(20pt);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      body {
+        background-color: #ebdfd3;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: "Cormorant", serif;
+        color: #003f3f;
+      }
+
+      .logo {
+        animation: 0.5s ease-out 0s 1 slideInFromBottom;
+      }
+
+      .container {
+        height: calc(100vh - 80pt);
+        margin: 40pt;
+      }
+
+      .main-content {
+        width: 100%;
+        max-width: 700pt;
+        margin: auto;
+      }
+
+      .header {
+        font-size: 40pt;
+        font-weight: 600;
+        margin-bottom: 20pt;
+        animation: 0.4s linear slideInFromBottomPrelude,
+          0.5s ease-out 0.4s 1 slideInFromBottom;
+      }
+
+      .subtext {
+        margin-top: 0;
+        font-size: 35pt;
+        animation: 0.8s linear slideInFromBottomPrelude,
+          0.5s ease-out 0.8s 1 slideInFromBottom;
+      }
+
+      .button {
+        animation: 1.2s linear 0s 1 slideInFromBottomPrelude,
+          0.5s ease-out 1.2s 1 slideInFromBottom;
+        height: 40pt;
+        border-radius: 20pt;
+        font-family: "Lato", sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 0 25pt;
+        border: 1px solid #003f3f;
+        color: #003f3f;
+        box-shadow: 1pt 1pt 1px rgba(0, 0, 0, 0.75);
+        transition: box-shadow 0.2s, background-color 0.2s, color 0.2s,
+          padding 0.2s;
+        background-color: #eec498;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: fit-content;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        box-shadow: 3pt 3pt 2px rgba(0, 0, 0, 0.75);
+        background-color: #ffb567;
+        padding-right: 20pt;
+      }
+
+      .button:active {
+        box-shadow: 0pt 0pt 0px rgba(0, 0, 0, 0.75);
+        background-color: #003f3f;
+        color: #ffb567;
+      }
+
+      .button > .arrow-spacing {
+        width: 5pt;
+        transition: width 0.2s;
+      }
+
+      .button:hover > .arrow-spacing {
+        width: 10pt;
+      }
+
+      .button > .rarr {
+        font-weight: 100;
+        font-family: sans-serif;
+        font-size: 20pt;
+      }
+
+      .button.disabled {
+        background-color: rgb(224, 224, 224);
+        box-shadow: none;
+        padding: 0 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="main-content">
+        <img src="assets/logo-v4.svg" width="120" class="logo" />
+        <p class="header">Write it out.</p>
+        <p class="subtext">
+          Record, organize and relive your thoughts in a simple, beautiful
+          journal that's made just for <i>you</i>.
+        </p>
+        <div class="button" id="cta-button">
+          <div>Start writing</div>
+          <div class="arrow-spacing"></div>
+          <div class="rarr">&rarr;</div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const ctaButton = document.querySelector("#cta-button");
+    ctaButton.onclick = (e) => {
+      console.log(e);
+      ctaButton.innerHTML = "Coming soon!";
+      ctaButton.classList.add("disabled");
+    };
+  </script>
+</html>
